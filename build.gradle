@@ -6,13 +6,14 @@ subprojects {
     configurations.all {
         if (it.name.startsWith("_")) {
             // You must exclude the same modules you substitute here, because ForgeGradle
-            exclude group: "com.example", module: "examplelib"
+            exclude group: "com.ommods", module: "omlib"
             return
         }
 
         resolutionStrategy.dependencySubstitution {
             // Apply substitutions for modules your projects depend on, replacing them with another project
-            substitute module("com.example:examplelib") using project(":examplelib")
+            logger.info("substituted omlib")
+            substitute module("com.ommods:omlib") using project(":OMLib")
         }
         
         // Uncomment the following line if you are running into issues with dependency resolution.
@@ -26,10 +27,10 @@ subprojects {
 
 project('runenv') {
     ext {
-        mcversion = '1.19'
-        forgeversion = '41.1.0'
+        mcversion = '1.19.2'
+        forgeversion = '43.3.0'
         // javaversion = 17 // Defaults to 17 already
-        // mappings = channel: 'official', version: '1.18.2' // Defaults to mojmap for the specified MC version
+        // mappings = "channel: 'parchment', version: '2022.11.27-1.19.2'" // Defaults to mojmap for the specified MC version
         // runArgs = [ ] // Arguments applied to all runs
         // runProps = [ name: value ] // Properties applied to all runs
     }

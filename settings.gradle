@@ -1,9 +1,17 @@
-rootProject.name = 'Multiproject' // Optionally set a custom name for the root
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven { url = 'https://maven.minecraftforge.net/' }
+        maven { url = 'https://maven.parchmentmc.org' } // Add this line
+    }
+}
+
+rootProject.name = 'OpenModularMods' // Optionally set a custom name for the root
 
 // This is where all the projects in this environment are registered
 // Use the relative path to the directory where their buildscript is in your includes
-include 'examplelib'
-include 'examplemod'
+include 'OMLib'
+include 'OpenModularTurrets'
 
 // This must always be here
 include 'runenv'

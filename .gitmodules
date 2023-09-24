@@ -1,3 +1,9 @@
 [submodule "runenv"]
 	path = runenv
 	url = https://github.com/amadornes/fg-multiproject-runenv.git
+[submodule "OMLib"]
+	path = OMLib
+	url = git@github.com:OpenModularTurretsTeam/OMLib.git
+[submodule "OpenModularTurrets"]
+	path = OpenModularTurrets
+	url = git@github.com:OpenModularTurretsTeam/OpenModularTurrets.git
